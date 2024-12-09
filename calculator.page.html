@@ -1,0 +1,41 @@
+<ion-content class="calculator">
+  <ion-grid>
+    
+    <ion-row>
+      <ion-col size="12">
+        <input type="text" class="display-screen" readonly [(ngModel)]="displayValue" />
+      </ion-col>
+    </ion-row>
+
+   
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="clear()" class="function">C</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="toggleSign()" class="function">+/-</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="percentage()" class="function">%</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputOperator('/')" class="operator">÷</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="inputDigit('7')">7</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputDigit('8')">8</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputDigit('9')">9</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputOperator('*')" class="operator">×</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="inputDigit('4')">4</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputDigit('5')">5</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputDigit('6')">6</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputOperator('-')" class="operator">-</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button expand="block" (click)="inputDigit('1')">1</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputDigit('2')">2</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputDigit('3')">3</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputOperator('+')" class="operator">+</ion-button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6"><ion-button expand="block" (click)="inputDigit('0')">0</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="inputDecimal()">.</ion-button></ion-col>
+      <ion-col><ion-button expand="block" (click)="calculate()" class="equals">=</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

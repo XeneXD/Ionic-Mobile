@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+    [debounce]="300"
+    (ionInput)="handleInput($event)"
+    placeholder="Search by username or email"
+    [(ngModel)]="searchInput"
+  >
+  </ion-searchbar>
+
+  
+  <div class="suggestions" *ngIf="showSuggestions && results.length > 0">
+    <div
+      class="suggestion-item"
+      *ngFor="let user of results"
+      (click)="selectUser(user)"
+    >
+      <strong>{{ user.username }}</strong> - {{ user.email }}
+    </div>
+  </div>
+
+  <div *ngIf="!showSuggestions" class="suggestions">
+    <div
+      class="suggestion-item"
+      *ngFor="let user of results"
+    >
+      <strong>{{ user.username }}</strong> - {{ user.email }}
+    </div>
+  </div>
+  
+  <div *ngIf="showSuggestions && results.length === 0" class="no-results">
+    No users found.
+  </div>
+</ion-content>
+
+
+
+
