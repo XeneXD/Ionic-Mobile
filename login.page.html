@@ -40,8 +40,8 @@
 </ion-menu>
 
 <div class="ion-page" id="main-content">
-  <ion-content [fullscreen]="true" class="ion-padding">
-    <ion-list>
+  <ion-content [fullscreen]="true" class="ion-padding" style="--padding-top: 56px;"> 
+     <ion-list>
       <ion-item>
         <ion-label position="floating">Username</ion-label>
         <ion-input type="text" placeholder="username" (ionInput)="onUsernameInput($event)"></ion-input>
@@ -52,7 +52,7 @@
         <ion-input type="password" placeholder="*******" (ionInput)="onPasswordInput($event)"></ion-input>
       </ion-item>
 
-      <ion-button (click)="login()">LOGIN</ion-button>
+      <ion-button expand="full" (click)="login()">LOGIN</ion-button>
     </ion-list> 
   </ion-content>
 </div>
